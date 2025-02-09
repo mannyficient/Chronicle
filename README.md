@@ -1,7 +1,7 @@
 # Chronicle - User Research Note-Taking Tool
-A figma plugin that captures notes or observations during research, tied to specific timestamps, as if documenting a timeline of events or insights. 
+A figma plugin that captures notes or observations during research, tied to specific timestamps as if documenting a timeline of events or insights. 
 
-Chronicle is designed for user research sessions. It helps researchers capture timestamped observations and insights using an intuitive tagging system.
+Chronicle is designed for user research sessions. Its intuitive tagging system helps researchers capture timestamped observations and insights.
 
 ## Features
 
@@ -101,3 +101,6 @@ Chronicle seamlessly integrates with FigJam, allowing you to:
 We value your input! If you have suggestions, encounter issues, or want to share your experience:
 - Submit an issue on our [GitHub Issues](https://github.com/yourusername/chronicle/issues) page
 - Fill out our [feedback form](https://elastic-resonance-ca4.notion.site/195d399fa03e8134bd26e82b5962904a?pvs=105)
+
+## Support
+-https://buymeacoffee.com/smilley1971
