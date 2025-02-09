@@ -99,7 +99,6 @@ Chronicle seamlessly integrates with FigJam, allowing you to:
 ## Feedback
 
 We value your input! If you have suggestions, encounter issues, or want to share your experience:
-- Submit an issue on our [GitHub Issues](https://github.com/yourusername/chronicle/issues) page
 - Fill out our [feedback form](https://elastic-resonance-ca4.notion.site/195d399fa03e8134bd26e82b5962904a?pvs=105)
 
 ## Support
