@@ -2,13 +2,13 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   /* box-sizing: border-box; */
 }
 
 body {
   background: #000;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -357,6 +357,28 @@ body {
     display: none;
 }
 
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1D1E20;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 </style>
 
 <body>
@@ -450,7 +472,7 @@ body {
             <svg width="121" height="92" viewBox="0 0 121 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M118.86 36.1301V56.1101C118.87 57.6801 117.92 59.0101 116.02 60.1101L67.6001 88.0601C65.7001 89.1601 63.3901 89.7101 60.6701 89.7001C57.9501 89.7001 55.6401 89.1401 53.7201 88.0401L5.00012 59.9101C3.08012 58.8001 2.12011 57.4701 2.11011 55.9001V35.9001C2.12011 37.4701 3.08012 38.8001 5.00012 39.9101L15.3601 45.8901L43.2001 61.9601L50.1601 65.9801L53.7201 68.0401C55.6401 69.1401 57.9501 69.7001 60.6701 69.7001C63.3901 69.7101 65.7001 69.1601 67.6001 68.0601L71.0301 66.0801L77.9401 62.0901L105.61 46.1201L116.02 40.1101C117.91 39.0201 118.86 37.6901 118.86 36.1301Z" stroke="#2A2C32"/>
                 <path d="M115.97 32.1L67.2501 3.97005C65.3401 2.86005 63.0201 2.31005 60.3001 2.30005C57.5901 2.30005 55.2801 2.84005 53.3701 3.94005L4.96014 31.9001C3.05014 32.9901 2.11011 34.3301 2.11011 35.9001C2.12011 37.4701 3.08012 38.8 5.00012 39.91L15.3601 45.89L43.2001 61.96L50.1601 65.9801L53.7201 68.04C55.6401 69.14 57.9501 69.7 60.6701 69.7C63.3901 69.71 65.7001 69.16 67.6001 68.06L71.0301 66.0801L77.9401 62.09L105.61 46.12L116.02 40.1101C117.91 39.0201 118.86 37.6901 118.86 36.1301V36.1101C118.85 34.5401 117.89 33.2 115.97 32.1ZM77.8901 46.05C77.8901 46.05 77.8701 46.06 77.8601 46.07C76.8901 46.62 75.7401 46.9 74.4201 46.89C73.0901 46.89 71.9401 46.6101 70.9501 46.0401L70.8701 45.9901L67.4301 44.01L60.5101 40.01L60.4601 40.0401L53.5501 44.03L50.1301 46C50.1301 46 50.1101 46.0101 50.1001 46.0201C49.1301 46.5701 47.9901 46.85 46.6701 46.84C45.3401 46.84 44.1801 46.5501 43.1901 45.9901C43.1601 45.9801 43.1401 45.96 43.1201 45.94C42.1801 45.39 41.7101 44.73 41.7101 43.98C41.7001 43.21 42.1901 42.55 43.1701 41.98L53.5501 35.9901L43.1101 29.96C43.1101 29.96 43.0501 29.93 43.0301 29.91C42.0901 29.35 41.6301 28.7 41.6201 27.96C41.6201 27.19 42.1101 26.52 43.0901 25.96C44.0701 25.39 45.2201 25.1101 46.5501 25.1101C47.8801 25.1101 48.9701 25.38 49.9301 25.92C49.9601 25.94 49.9901 25.9501 50.0201 25.9701L60.4601 32L70.8101 26.03L70.8401 26.01C71.8201 25.44 72.9801 25.16 74.3101 25.16C75.6401 25.16 76.7901 25.4501 77.7801 26.0201C78.7701 26.5901 79.2601 27.2601 79.2601 28.0201C79.2701 28.7901 78.7801 29.4601 77.8001 30.0201L77.7601 30.0401L67.4301 36.01L77.8701 42.0401C78.8501 42.6101 79.3501 43.28 79.3501 44.05C79.3601 44.82 78.8701 45.48 77.8901 46.05Z" stroke="#2A2C32"/>
-                <path d="M79.2599 28.0202C79.2699 28.7902 78.7799 29.4602 77.7999 30.0202L77.7599 30.0402L67.4299 36.0102V44.0102L60.5099 40.0102L60.46 40.0402V32.0002L70.8099 26.0302L70.84 26.0102C71.8201 25.4402 72.9799 25.1602 74.3099 25.1602C75.6399 25.1602 76.79 25.4502 77.78 26.0202C78.77 26.5902 79.2599 27.2602 79.2599 28.0202Z" stroke="#2A2C32"/>
+                <path d="M79.2599 28.0202C79.2699 28.7902 78.7799 29.4602 77.7999 30.0202L77.7599 30.0402L67.4299 36.0102V44.0102L60.5099 40.0102L60.46 40.0402V32.0002L70.8099 26.0302L70.8401 26.0102C71.8201 25.4402 72.9799 25.1602 74.3099 25.1602C75.6399 25.1602 76.7901 25.4502 77.7801 26.0202C78.7701 26.5902 79.2599 27.2602 79.2599 28.0202Z" stroke="#2A2C32"/>
                 <path d="M79.3497 44.05C79.3597 44.82 78.8698 45.48 77.8898 46.05C77.8798 46.06 77.8697 46.06 77.8597 46.07C76.8897 46.62 75.7397 46.9 74.4197 46.89C73.0897 46.89 71.9398 46.61 70.9498 46.04L70.8697 45.99L67.4297 44.01V36.01L77.8697 42.04C78.8497 42.61 79.3497 43.28 79.3497 44.05Z" stroke="#2A2C32"/>
                 <path d="M53.5501 35.99V44.03L50.1301 46C50.1301 46 50.1101 46.01 50.1001 46.02C49.1301 46.57 47.9901 46.85 46.6701 46.84C45.3401 46.84 44.1801 46.55 43.1901 45.99C43.1601 45.98 43.1401 45.96 43.1201 45.94C42.1801 45.39 41.7101 44.73 41.7101 43.98C41.7001 43.21 42.1901 42.55 43.1701 41.98L53.5501 35.99Z" stroke="#2A2C32"/>
                 <path d="M60.4601 32.0001V40.0401L53.5501 44.0301V35.9901L43.1101 29.9601C43.1101 29.9601 43.0501 29.9301 43.0301 29.9101C42.0901 29.3501 41.6301 28.7001 41.6201 27.9601C41.6201 27.1901 42.1101 26.5201 43.0901 25.9601C44.0701 25.3901 45.2201 25.1101 46.5501 25.1101C47.8801 25.1101 48.9701 25.3801 49.9301 25.9201C49.9601 25.9401 49.9901 25.9501 50.0201 25.9701L60.4601 32.0001Z" stroke="#2A2C32"/>
@@ -522,8 +544,24 @@ class NotesManager {
     this.notes = [];
     this.selectedEmojis = new Set();
     this.exportBtn = document.querySelector('.export');
+    this.setupToast();
     this.initializeTextAreaHandler();
     this.initializeExport();
+  }
+
+  setupToast() {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = 'No notes to export. Add some notes first';
+    document.body.appendChild(toast);
+    this.toast = toast;
+  }
+
+  showToast() {
+    this.toast.classList.add('show');
+    setTimeout(() => {
+      this.toast.classList.remove('show');
+    }, 3000); // Hide after 3 seconds
   }
 
   initialize() {
@@ -554,17 +592,17 @@ class NotesManager {
     this.noteInput.addEventListener('input', () => {
       if (!timer.isRunning) {
         timer.start();
-        document.querySelector('.start-btn').textContent = 'Stop';
+        const startBtn = document.querySelector('.start-btn');
+        startBtn.textContent = 'Stop';
+        startBtn.style.color = '#ff0000'; // Red when running
       }
     });
   }
 
   initializeExport() {
     this.exportBtn.addEventListener('click', () => {
-      console.log('Export clicked, notes:', this.notes); // Debug log
-      
       if (!this.notes || this.notes.length === 0) {
-        console.log('No notes to export');
+        this.showToast();
         return;
       }
 
@@ -696,16 +734,20 @@ document.querySelector('.start-btn').addEventListener('click', function() {
   if (timer.isRunning) {
     timer.stop();
     this.textContent = 'Start';
+    this.style.color = '#00ff00'; // Green when stopped
   } else {
     timer.start();
     this.textContent = 'Stop';
+    this.style.color = '#ff0000'; // Red when running
   }
 });
 
 document.querySelector('.reset-btn').addEventListener('click', () => {
   timer.reset();
   notesManager.resetNotes();
-  document.querySelector('.start-btn').textContent = 'Start';
+  const startBtn = document.querySelector('.start-btn');
+  startBtn.textContent = 'Start';
+  startBtn.style.color = '#00ff00'; // Green when reset
 });
 </script>
 </body>
